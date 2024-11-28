@@ -20,9 +20,24 @@ if __name__ == "__main__":
 
         match opcao:
             case '1':
-                db.insert_client()
+                nome = input("Digite o nome: ")
+                cpf = input("Digite o CPF: ")
+                email = input("Digite o e-mail: ")
+                telefone = input("Digite o telefone: ")
+                endereco = input("Digite o endereço: ")
+                cidade = input("Digite a cidade: ")
+                db.insert_client(nome, cpf, email, telefone, endereco, cidade)
+                
             case '2':
-                db.insert_product()
+                nome = input("Digite o nome do produto: ")
+                marca = input("Digite a marca: ")
+                modelo = input("Digite o modelo: ")
+                descricao = input("Digite a descrição: ")
+                preco = float(input("Digite o preço: "))
+                tipo = input("Digite o tipo: ")
+                tamanho = input("Digite o tamanho: ")
+                peso = input("Digite o peso: ")
+                db.insert_product(nome, marca, modelo, descricao, preco, tipo, tamanho, peso)
             case '3':
                 db.select_client()
             case '4':
@@ -47,7 +62,6 @@ if __name__ == "__main__":
                 db.delete_product(id)                            
             case '11':
                 db.close_connection()
-                print("Conexão encerrada")
                 break
 
 
